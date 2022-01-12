@@ -86,11 +86,11 @@ filterbtns.forEach(btn=>{
             return item;
         }
       })
-      // agr category koi si bhi nhi hai to all hogi
+      // if category is equal to all then display all item
       if(category=="all"){
         displayItemMenu(menu)
       }
-      // agr all nhi hai to displayitemmenu ke andr category menu dal do
+      // if category is not equal to all then show the filter arry
       else{
         displayItemMenu(CategoryMenu)
       }
@@ -128,4 +128,11 @@ function displayItemMenu(menuItem){
     sectionCentre.innerHTML= displayMenu
 }
 
-
+// scrol window on click
+function scroll(){
+    window.scrollBy({
+        top:1000,
+        behavior:"smooth"
+    })
+}
+document.querySelector(".filterbtn").addEventListener("click",scroll)
