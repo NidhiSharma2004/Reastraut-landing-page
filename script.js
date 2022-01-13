@@ -66,18 +66,20 @@ const menu = [
     
 ]
 let sectionCentre = document.querySelector(".section-centre");
-let filterbtns = document.querySelectorAll(".btns")
+let btns = document.querySelectorAll(".btns");
+let filterbtn = document.querySelector(".filterbtn")
 
 // load the item
 window.addEventListener("DOMContentLoaded",function(){
     displayItemMenu(menu);
+    displayButton(menu);
 })
 
 
 // filtering the items
 
 
-filterbtns.forEach(btn=>{
+btns.forEach(btn=>{
     btn.addEventListener("click",(e)=>{
         let category = e.currentTarget.dataset.id;    
         console.log(category)
@@ -127,8 +129,18 @@ function displayItemMenu(menuItem){
     displayMenu=displayMenu.join("")
     sectionCentre.innerHTML= displayMenu
 }
+// show button dynamically
 
-// scrol window on click
+function displayButton(menuBtn){
+    let showbtn = menuBtn.map(btn=>{
+        return`
+        <button data-id="all" class="btns all">${btn.category}</button>
+        `
+    });
+    filterbtn.innerHTML=showbtn
+}
+
+// scrol window on click                         
 function scroll(){
     window.scrollBy({
         top:1000,
