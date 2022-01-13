@@ -170,3 +170,28 @@ h1{
         transform: rotate(360deg);
     }
   }
+
+  .cartInput{
+    border: 2px solid;
+    text-align: center;
+    width: 553px;
+    height: 119px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: none;
+    position: relative;
+    background-color: rgb(121, 30, 30);
+    color: white;
+}
+.cartInput h1{
+    color: white;
+}
+.price2{
+    margin: 0px 37px;
+}
+#quantity{
+    width: 100px;
+    height: 40px;
+}

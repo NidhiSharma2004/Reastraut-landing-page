@@ -5,6 +5,7 @@ const menu = [
         category: "fast food",
         title: "Burger",
         price: "$43",
+        cart: "add to cart",
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
     },
     {
@@ -13,6 +14,7 @@ const menu = [
         category: "fast food",
         title: "chilli patato",
         price: "$34",
+        cart: "add to cart",
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
     },
     {
@@ -21,6 +23,7 @@ const menu = [
         category: "fast food",
         title: "chowmin",
         price: "$40",
+        cart: "add to cart",
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
     },
     {
@@ -29,6 +32,7 @@ const menu = [
         category: "breakfast",
         title: "pasta",
         price: "$50",
+        cart: "add to cart",
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
     },
     {
@@ -37,6 +41,7 @@ const menu = [
         category: "breakfast",
         title: "paneer tika",
         price: "$60",
+        cart: "add to cart",
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
     },
     {
@@ -45,6 +50,7 @@ const menu = [
         category: "breakfast",
         title: "mango shake",
         price: "$43",
+        cart: "add to cart",
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
     },
     {
@@ -53,6 +59,7 @@ const menu = [
         category: "breakfast",
         title: "salad",
         price: "$43",
+        cart: "add to cart",
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
     },
     {
@@ -61,6 +68,7 @@ const menu = [
         category: "breakfast",
         title: "momos",
         price: "$53",
+        cart: "add to cart",
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
     }
 
@@ -68,11 +76,14 @@ const menu = [
 let sectionCentre = document.querySelector(".section-centre");
 let btns = document.querySelectorAll(".btns");
 let filterbtn = document.querySelector(".filterbtn")
-
+let cartContainer = document.querySelector(".cartContainer")
+let cartInput = document.querySelector(".cartInput")
+let done = document.getElementById('done')
 // load the item
 window.addEventListener("DOMContentLoaded", function () {
     displayItemMenu(menu);
     displayButton(menu);
+    // cartSection(menu)
 })
 
 
@@ -124,12 +135,6 @@ function displayButton(menu) {
     }
 }
 
-
-
-
-
-
-
 // display the item
 function displayItemMenu(menuItem) {
     let displayMenu = menuItem.map(menu => {
@@ -142,7 +147,7 @@ function displayItemMenu(menuItem) {
     <div class="title">
         ${menu.title}
     </div>
-    <button class="cart" type="button" value="add to cart">add to cart</button>
+    <button class="cart" id="${menu.title}" data-rs = "${menu.price}">${menu.cart}</button>
     <div class="price">
         ${menu.price}
     </div>
@@ -156,6 +161,34 @@ function displayItemMenu(menuItem) {
     // console.log(displayItem)
     displayMenu = displayMenu.join("")
     sectionCentre.innerHTML = displayMenu
+
+
+    // CART SECTION TREATMENT
+
+
+    let carts = document.querySelectorAll(".cart")
+    console.log(carts)
+    carts.forEach(cart => {
+        cart.addEventListener("click", function (e) {
+
+            cartInput.style.display = "flex";
+            // get itemTittle from cart in menu inside
+            let itemTitle = e.currentTarget.id;
+            // get itemPrice from cart in menu inside
+            let itemPrice = e.currentTarget.dataset.rs;
+            // put itemTittle from cart in menu inside in cartContainer
+          let inputprice = document.querySelector(".inputprice")
+          inputprice.innerHTML=`<h2>${itemPrice}</h2>`
+           // put itemPrice from cart in menu inside in cartContainer
+          let inputheading = document.querySelector(".inputheading")
+          inputheading.innerHTML=`<h1>${itemTitle}</h1>`
+
+          let value = document.getElementById("quantity").value
+          if(itemTitle&&value){
+            localStorage.setItem(itemTitle,value);
+          }
+        })
+    })
 }
 // scrol window on click                         
 function scroll() {
@@ -164,4 +197,5 @@ function scroll() {
         behavior: "smooth"
     })
 }
-document.querySelector(".filterbtn").addEventListener("click", scroll)
+
+
