@@ -118,5 +118,17 @@ function displayButton(menu){
     }
 }
 
+// local storage section
 
 
+
+done.addEventListener("click",()=>{
+    var itemTitle = document.getElementById("itemTitle").textContent
+    var  value = document.querySelector("#quantity").value;
+    console.log(`what is value`,value);
+    let valueArr = new Array();
+    valueArr.push(value)
+    localStorage.setItem(itemTitle,valueArr)
+});
+
+                    

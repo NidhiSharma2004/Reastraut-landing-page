@@ -164,10 +164,7 @@ function displayItemMenu(menuItem) {
 
 
     // CART SECTION TREATMENT
-
-
     let carts = document.querySelectorAll(".cart")
-    console.log(carts)
     carts.forEach(cart => {
         cart.addEventListener("click", function (e) {
 
@@ -182,14 +179,25 @@ function displayItemMenu(menuItem) {
            // put itemPrice from cart in menu inside in cartContainer
           let inputheading = document.querySelector(".inputheading")
           inputheading.innerHTML=`<h1>${itemTitle}</h1>`
-
-          let value = document.getElementById("quantity").value
-          if(itemTitle&&value){
-            localStorage.setItem(itemTitle,value);
-          }
+        // on done we set the item in local storage
+        done.addEventListener("click",()=>{
+            // get item title
+            var itemTitle = document.querySelector(".inputheading").textContent
+            // get item quantity
+            var  value = document.querySelector("#quantity").value;
+            // make new array
+            let valueArr = new Array();
+            // push value in arr
+            valueArr.push(value)
+            // set value
+            localStorage.setItem(itemTitle,valueArr)
+        });
         })
     })
 }
+document.getElementById("exit").addEventListener("click",()=>{
+    cartInput.style.display = "none";
+})
 // scrol window on click                         
 function scroll() {
     window.scrollBy({
@@ -197,5 +205,4 @@ function scroll() {
         behavior: "smooth"
     })
 }
-
 
