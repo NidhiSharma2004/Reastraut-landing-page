@@ -31,6 +31,7 @@
   </div>
   <div class="cartInput">
     <button id="done">done</button>
+    <button id="exit" type="button">Delete</button>
     <div class="inputheading">
       <h1 id ="itemTitle" >Burger</h1>
     </div>
@@ -38,9 +39,14 @@
       <h2>$45</h2>
     </div>
     <div class="quantity">
-      
+      <input type="number" id="quantity" min="1" max="20">
     </div>
-    <button id="exit" type="button">Delete</button>
+    
+  </div>
+  <div id="yourCart">
+    <h1>your Cart Details</h1>
+    <h2 id="yourCartItem"></h2>
+    <h2 id="yourCartItemValue"></h2>
   </div>
   <script src="script.js"></script>
 </body>

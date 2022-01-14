@@ -1,3 +1,5 @@
+
+'use strict';
 const menu = [
     {
         image: "images/burger.jpg",
@@ -75,17 +77,19 @@ const menu = [
 ]
 let sectionCentre = document.querySelector(".section-centre");
 let btns = document.querySelectorAll(".btns");
-let filterbtn = document.querySelector(".filterbtn")
-let cartContainer = document.querySelector(".cartContainer")
-let cartInput = document.querySelector(".cartInput")
-let done = document.getElementById('done')
+let filterbtn = document.querySelector(".filterbtn");
+let cartContainer = document.querySelector(".cartContainer");
+let cartInput = document.querySelector(".cartInput");
+let done = document.getElementById('done');
+let yourCart = document.getElementById("yourCart");
+let yourCartItem = document.getElementById("yourCartItem");
+let yourCartItemValue = document.getElementById("yourCartItemValue")
 // load the item
 window.addEventListener("DOMContentLoaded", function () {
     displayItemMenu(menu);
     displayButton(menu);
     // cartSection(menu)
 })
-
 
 // BUTTON AND FILTERING SECTION
 
@@ -170,31 +174,34 @@ function displayItemMenu(menuItem) {
 
             cartInput.style.display = "flex";
             // get itemTittle from cart in menu inside
-            let itemTitle = e.currentTarget.id;
+            const itemTitle = e.currentTarget.id;
             // get itemPrice from cart in menu inside
-            let itemPrice = e.currentTarget.dataset.rs;
+            const itemPrice = e.currentTarget.dataset.rs;
             // put itemTittle from cart in menu inside in cartContainer
           let inputprice = document.querySelector(".inputprice")
           inputprice.innerHTML=`<h2>${itemPrice}</h2>`
+          
            // put itemPrice from cart in menu inside in cartContainer
           let inputheading = document.querySelector(".inputheading")
           inputheading.innerHTML=`<h1>${itemTitle}</h1>`
         // on done we set the item in local storage
         done.addEventListener("click",()=>{
             // get item title
-            var itemTitle = document.querySelector(".inputheading").textContent
+            var selecteditemTitle = document.querySelector(".inputheading").textContent
             // get item quantity
             var  value = document.querySelector("#quantity").value;
             // make new array
             let valueArr = new Array();
             // push value in arr
             valueArr.push(value)
-            // set value
-            localStorage.setItem(itemTitle,valueArr)
+             // set value
+             localStorage.setItem(selecteditemTitle,valueArr);
         });
         })
     })
 }
+
+// make display none of acrt div on click on exit;
 document.getElementById("exit").addEventListener("click",()=>{
     cartInput.style.display = "none";
 })

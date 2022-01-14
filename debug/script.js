@@ -100,7 +100,7 @@ function displayButton(menu){
     // make all category in order
     allCategory.sort();
     // make an empty array to get all unique category
-    let oneCategory = ["ALL"];
+    let oneCategory = [];
     for(let i=0;i<allCategory.length;i++){
         if(allCategory[i]!=allCategory[i+1]){
             oneCategory.push(allCategory[i])
@@ -123,12 +123,15 @@ function displayButton(menu){
 
 
 done.addEventListener("click",()=>{
-    var itemTitle = document.getElementById("itemTitle").textContent
+    // get item title
+    var itemTitle = document.querySelector(".inputheading").textContent
+    // get item quantity
     var  value = document.querySelector("#quantity").value;
-    console.log(`what is value`,value);
+    // make new array
     let valueArr = new Array();
+    // push value in arr
     valueArr.push(value)
-    localStorage.setItem(itemTitle,valueArr)
+    // set value
+     localStorage.setItem(itemTitle,valueArr)
 });
-
                     
