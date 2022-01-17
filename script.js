@@ -1,5 +1,4 @@
-
-'use strict';
+"use strict";
 const menu = [
     {
         image: "images/burger.jpg",
@@ -8,7 +7,7 @@ const menu = [
         title: "Burger",
         price: "$43",
         cart: "add to cart",
-        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
+        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
         image: "images/chilli.jpg",
@@ -17,7 +16,7 @@ const menu = [
         title: "chilli patato",
         price: "$34",
         cart: "add to cart",
-        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
+        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
         image: "images/chowmin.jpg",
@@ -26,7 +25,7 @@ const menu = [
         title: "chowmin",
         price: "$40",
         cart: "add to cart",
-        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
+        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
         image: "images/pasta2.jpg",
@@ -35,7 +34,7 @@ const menu = [
         title: "pasta",
         price: "$50",
         cart: "add to cart",
-        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
+        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
         image: "images/paner.jpg",
@@ -44,7 +43,7 @@ const menu = [
         title: "paneer tika",
         price: "$60",
         cart: "add to cart",
-        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
+        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
         image: "images/mango.jpg",
@@ -53,7 +52,7 @@ const menu = [
         title: "mango shake",
         price: "$43",
         cart: "add to cart",
-        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
+        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
         image: "images/salad.jpg",
@@ -62,7 +61,7 @@ const menu = [
         title: "salad",
         price: "$43",
         cart: "add to cart",
-        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
+        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
         image: "images/momo.jpg",
@@ -71,34 +70,33 @@ const menu = [
         title: "momos",
         price: "$53",
         cart: "add to cart",
-        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus"
-    }
-
-]
+        decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
+    },
+];
 let sectionCentre = document.querySelector(".section-centre");
 let btns = document.querySelectorAll(".btns");
 let filterbtn = document.querySelector(".filterbtn");
 let cartContainer = document.querySelector(".cartContainer");
 let cartInput = document.querySelector(".cartInput");
-let done = document.getElementById('done');
+let done = document.getElementById("done");
 let yourCart = document.getElementById("yourCart");
-let yourCartItem = document.getElementById("yourCartItem");
-let yourCartItemValue = document.getElementById("yourCartItemValue")
+// let yourCartItem = document.getElementById("yourCartItem");
+// let yourCartItemValue = document.getElementById("yourCartItemValue")
+
 // load the item
 window.addEventListener("DOMContentLoaded", function () {
     displayItemMenu(menu);
     displayButton(menu);
-    // cartSection(menu)
-})
+    cartSection();
+});
 
 // BUTTON AND FILTERING SECTION
 
 function displayButton(menu) {
-
     // get all category
-    let allCategory = menu.map(item => {
-        return item.category
-    })
+    let allCategory = menu.map((item) => {
+        return item.category;
+    });
 
     // make all category in order
     allCategory.sort();
@@ -107,41 +105,41 @@ function displayButton(menu) {
     let oneCategory = ["all"];
     for (let i = 0; i < allCategory.length; i++) {
         if (allCategory[i] != allCategory[i + 1]) {
-            oneCategory.push(allCategory[i])
+            oneCategory.push(allCategory[i]);
         }
     }
 
     // to show btn
     for (let i = 0; i < oneCategory.length; i++) {
-        filterbtn.innerHTML += `<button data-id="${oneCategory[i]}" class=" btns">${oneCategory[i]}</button>`
+        filterbtn.innerHTML += `<button data-id="${oneCategory[i]}" class=" btns">${oneCategory[i]}</button>`;
 
         // GET THE CLASS OF ALL BUTTON AND USE FOREACH METHOD
-        let btns = document.querySelectorAll(".btns")
-        btns.forEach(btn => {
+        let btns = document.querySelectorAll(".btns");
+        btns.forEach((btn) => {
             btn.addEventListener("click", (e) => {
                 let category = e.currentTarget.dataset.id;
                 // console.log(category)
-                const CategoryMenu = menu.filter(item => {
+                const CategoryMenu = menu.filter((item) => {
                     if (category == item.category) {
                         return item;
                     }
-                })
+                });
                 // if category is equal to all then display all item
                 if (category == "all") {
-                    displayItemMenu(menu)
+                    displayItemMenu(menu);
                 }
                 // if category is not equal to all then show the filter arry
                 else {
-                    displayItemMenu(CategoryMenu)
+                    displayItemMenu(CategoryMenu);
                 }
-            })
-        })
+            });
+        });
     }
 }
 
 // display the item
 function displayItemMenu(menuItem) {
-    let displayMenu = menuItem.map(menu => {
+    let displayMenu = menuItem.map((menu) => {
         return `
     <div class="items">
     <div class="image">
@@ -160,56 +158,68 @@ function displayItemMenu(menuItem) {
      <p>${menu.decs}</p>
     </div>
 </div>
-    `
+    `;
     });
-    // console.log(displayItem)
-    displayMenu = displayMenu.join("")
-    sectionCentre.innerHTML = displayMenu
 
-
-    // CART SECTION TREATMENT
-    let carts = document.querySelectorAll(".cart")
-    carts.forEach(cart => {
-        cart.addEventListener("click", function (e) {
-
-            cartInput.style.display = "flex";
-            // get itemTittle from cart in menu inside
-            const itemTitle = e.currentTarget.id;
-            // get itemPrice from cart in menu inside
-            const itemPrice = e.currentTarget.dataset.rs;
-            // put itemTittle from cart in menu inside in cartContainer
-          let inputprice = document.querySelector(".inputprice")
-          inputprice.innerHTML=`<h2>${itemPrice}</h2>`
-          
-           // put itemPrice from cart in menu inside in cartContainer
-          let inputheading = document.querySelector(".inputheading")
-          inputheading.innerHTML=`<h1>${itemTitle}</h1>`
-        // on done we set the item in local storage
-        done.addEventListener("click",()=>{
-            // get item title
-            var selecteditemTitle = document.querySelector(".inputheading").textContent
-            // get item quantity
-            var  value = document.querySelector("#quantity").value;
-            // make new array
-            let valueArr = new Array();
-            // push value in arr
-            valueArr.push(value)
-             // set value
-             localStorage.setItem(selecteditemTitle,valueArr);
-        });
-        })
-    })
+    displayMenu = displayMenu.join("");
+    sectionCentre.innerHTML = displayMenu;
 }
 
-// make display none of acrt div on click on exit;
-document.getElementById("exit").addEventListener("click",()=>{
+// CART SECTION TREATMENT
+
+function cartSection() {
+    // yhs hme displaymenuitem fun ko call krna padega so that we can acces all the cart class
+    displayItemMenu(menu);
+    // now we get all the class
+    let carts = document.querySelectorAll(".cart");
+    // we can use for each method on all class and target each cart btn
+    carts.forEach((cart) => {
+        // for each cart btn we add event listener to get id(which includes name of item) and
+        // and dataset which includes rupees
+        cart.addEventListener("click", function (e) {
+            cartInput.style.display = "flex";
+            let itemTitle = e.currentTarget.id;
+            let itemPrice = e.currentTarget.dataset.rs;
+            // put itemPrice from cart in cartContainer;
+            let inputprice = document.querySelector(".inputprice");
+            inputprice.innerHTML = `<h2>${itemPrice}</h2>`;
+            // put itemPrice from cart in cartContainer;
+            let inputheading = document.querySelector(".inputheading");
+            inputheading.innerHTML = `<h1>${itemTitle}</h1>`;
+            // on done we set the item in local storage
+      
+            function cartStorage(){
+            // get tha value of quantityinput
+            let quantityOfItem = document.getElementById("quantity").value;
+            let key = localStorage.getItem("key");
+            let itemsquantityObj = [];
+            console.log(key)
+            if (key == null) {
+                // if key is null, create a new key with value of title and price 
+            }
+            else {
+            itemsquantityObj = JSON.parse(key);
+            console.log(key);
+               
+            }
+            itemsquantityObj.push(quantityOfItem);
+            localStorage.setItem("key", JSON.stringify(itemsquantityObj));
+        }
+        done.addEventListener("click",cartStorage)
+        });
+    });
+}
+
+// make display none of cart div on click on exit;
+document.getElementById("exit").addEventListener("click", () => {
     cartInput.style.display = "none";
-})
-// scrol window on click                         
+});
+
+// scrol window on click
 function scroll() {
     window.scrollBy({
         top: 1000,
-        behavior: "smooth"
-    })
+        behavior: "smooth",
+    });
 }
-
+filterbtn.addEventListener("click", scroll);
