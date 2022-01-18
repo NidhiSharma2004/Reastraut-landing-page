@@ -211,6 +211,7 @@ h1{
 }
 .cut{
     padding: .5rem;
+    cursor: pointer;
 }
 .yourCart{
     justify-content: space-between;
@@ -219,7 +220,7 @@ h1{
 }
 .cartEmpty{
     left: 74%;
-    bottom: 83%;
+    bottom: 89%;
     position: absolute;
     width: 179px;
     display: none;

@@ -251,12 +251,10 @@ cartIcon.addEventListener("click",()=>{
     // console.log(localStorage.length)
     let cartEmpty = document.querySelector(".cartEmpty");
     if(localStorage.length>0){
-        cartEmpty.style.display="none"
+    cartEmpty.style.display="none"
     document.querySelector(".cartShowCase").style.display = "flex";
     }else{
-        let h5 = document.createElement("h5");
-        h5.innerText = "cart is empty!";
-        cartEmpty.appendChild(h5);
+        cartEmpty.innerHTML=`cart is empty`;
         cartEmpty.style.display="inline"
     }
         
