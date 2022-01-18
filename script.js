@@ -249,14 +249,15 @@ cartIcon.addEventListener("click",()=>{
     // we have to call show cart fun to show information
     showCart(localStorage)
     // console.log(localStorage.length)
+    let cartEmpty = document.querySelector(".cartEmpty");
     if(localStorage.length>0){
-    document.querySelector(".cartShowCase").style.display = "flex"
+        cartEmpty.style.display="none"
+    document.querySelector(".cartShowCase").style.display = "flex";
     }else{
-        let h5= document.createElement("h5");
-        h5.className = "cartEmpty"
-        h5.innerText = "your cart is empty!";
-        document.querySelector(".cartShowCase").after(h5);
-        console.log(document.querySelector(".cartEmpty"))
+        let h5 = document.createElement("h5");
+        h5.innerText = "cart is empty!";
+        cartEmpty.appendChild(h5);
+        cartEmpty.style.display="inline"
     }
         
     cutIcon.addEventListener("click",()=>{

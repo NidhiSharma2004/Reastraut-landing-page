@@ -222,7 +222,7 @@ h1{
     bottom: 83%;
     position: absolute;
     width: 179px;
-    display: flex;
+    display: none;
     color: rgb(245, 245, 245);
     font-size: 1.3rem
 }
