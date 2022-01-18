@@ -180,12 +180,20 @@ h1{
     color: white;
 }
 .yourCart{
+  
+    justify-content: space-between;
+    display: flex;
+}
+#table{
+    width: 100%;
+}
+.cartShowCase{
     padding: .4rem;
     width: 237px;
-    justify-content: space-between;
     font-size: 1.3rem;
     font-weight: 700;
     position: relative;
+    display: none;
     left: 44%;
     border-radius: 16px;
     margin-top: -231px;
@@ -193,8 +201,12 @@ h1{
     z-index: 1;
     box-shadow: 2px 2px 5px 2px rgb(255, 253, 253);
     background: rgba(4, 68, 63, 0.869);
-    display: none
 }
-#table{
-    width: 100%;
+.clearAll{
+    cursor: pointer;
+    height: 27px;
+    padding: 0.3rem;
+    border-radius: 8px;
+    color: rgba(4, 68, 63, 0.869);
+    background-color: white;
 }

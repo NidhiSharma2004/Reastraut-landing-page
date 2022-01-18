@@ -169,6 +169,7 @@ function displayItemMenu(menuItem) {
 
 // CART SECTION TREATMENT
 
+
 function cartSection() {
     // yhs hme displaymenuitem fun ko call krna padega so that we can acces all the cart class
     displayItemMenu(menu);
@@ -177,45 +178,75 @@ function cartSection() {
     // we can use for each method on all class and target each cart btn
     carts.forEach((cart) => {
         // for each cart btn we add event listener to get id(which includes name of item) and
-        cart.addEventListener("click", function (e) {
-            // get the idname of current target
-            let itemName = e.currentTarget.id;
-            // here i didn't get inputvalue directly so i go to console and i found nextElement sibbling
-            // is input so i get the value by this way
-            let inputValue = e.currentTarget.nextElementSibling.value;
-            // i set the key as the name of id
-            if (inputValue != '') {
-            // if input value is not blank then run the fun
-            // yha pr hm itemName ko hi key ki thrah se krenge
-                let itemTitleKey = localStorage.getItem(`${itemName}`);
-                // make a empty object
-                let data = [];
-                if (itemTitleKey == null) {
-                    data.push(inputValue);
-                // hr baar new item k liye itemTitleKey jo h vo null hogi
-                }else{
-                // or ek baar koi value usme chli gyi to usse mein se vo parse hokr data mein aa jaye
-                    data = JSON.parse(itemTitleKey);
-                // console.log(`parse ki gyi value`,data);
-                // jo new value dubra input value m dali h use push krneg
-                  data.push(inputValue);
-                    // console.log(`push ki gyi value`,data);
-                // new value puch hone ke baad phele value ko cut kr denge or uske baad set kr denge
-                    data.splice(0,1);
-                // console.log(`splice hone ka bad`,data);
-                }
-                
-                localStorage.setItem(`${itemName}`, JSON.stringify(data));
-                // kyuki locastorage ek object hai isliye we use for loop 
-                showCart(localStorage)
-            }
-            // iske value ko blank ke denge
-            e.currentTarget.nextElementSibling.value='';
-            // now we make display flex of yourCart div when we click on cart Icon
-           
+        cart.addEventListener("click", (e) => {
+            getData(e)
         });
     });
 }
+
+// function for local storage
+
+function getData(e) {
+    // get the idname of current target
+    let itemName = e.currentTarget.id;
+    // here i didn't get inputvalue directly so i go to console and i found nextElement sibbling
+    // is input so i get the value by this way
+    let inputValue = e.currentTarget.nextElementSibling.value;
+    // i set the key as the name of id
+    if (inputValue != '') {
+        // if input value is not blank then run the fun
+        // yha pr hm itemName ko hi key ki thrah se krenge
+        let itemTitleKey = localStorage.getItem(`${itemName}`);
+        // make a empty object
+        let data = [];
+        if (itemTitleKey == null) {
+            data.push(inputValue);
+            // hr baar new item k liye itemTitleKey jo h vo null hogi
+        } else {
+            // or ek baar koi value usme chli gyi to usse mein se vo parse hokr data mein aa jaye
+            data = JSON.parse(itemTitleKey);
+            // console.log(`parse ki gyi value`,data);
+            // jo new value dubra input value m dali h use push krneg
+            data.push(inputValue);
+            // console.log(`push ki gyi value`,data);
+            // new value puch hone ke baad phele value ko cut kr denge or uske baad set kr denge
+            data.splice(0, 1);
+            // console.log(`splice hone ka bad`,data);
+        }
+        localStorage.setItem(`${itemName}`, JSON.stringify(data));
+
+        // iske value ko blank ke denge
+        e.currentTarget.nextElementSibling.value = '';
+        showCart(localStorage);
+        document.querySelector(".clearAll").addEventListener("click",()=>{
+            localStorage.clear();
+            showCart(localStorage)
+        })
+    }
+
+}
+
+
+
+// show item
+
+function showCart(obj) {
+    let html = ''
+    for (let i = 0; i < obj.length; i++) {
+        // to get the local storage key index
+        // console.log(localStorage.key(i));
+        // to get the key value in without string we use JSON.parse(localStorage.getItem(localStorage.key(i)))
+        html += `
+        <tr>
+          <td>${obj.key(i)} </td>
+          <td>${JSON.parse(obj.getItem(obj.key(i)))}</td>
+        </tr>`
+    }
+    document.querySelector("#table").innerHTML = html;
+}
+
+
+
 
 // scrol window on click
 function scroll() {
@@ -226,19 +257,3 @@ function scroll() {
 }
 filterbtn.addEventListener("click", scroll);
 
-// show item
-
-function showCart(obj){
-    let html = ''
-    for(let i=0; i<obj.length; i++){
-    // to get the local storage key index
-    // console.log(localStorage.key(i));
-    // to get the key value in without string we use JSON.parse(localStorage.getItem(localStorage.key(i)))
-        html+=`
-        <tr>
-          <td>${obj.key(i)} </td>
-          <td>${ JSON.parse(obj.getItem(obj.key(i)))}</td>
-        </tr>`
-    }
-    document.querySelector("#table").innerHTML=html;
-}
