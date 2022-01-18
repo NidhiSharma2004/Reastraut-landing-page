@@ -207,25 +207,12 @@ function cartSection() {
                 
                 localStorage.setItem(`${itemName}`, JSON.stringify(data));
                 // kyuki locastorage ek object hai isliye we use for loop 
-                let html = ''
-                for(let i=0; i<localStorage.length; i++){
-                // to get the local storage key index
-                // console.log(localStorage.key(i));
-                // to get the key value in without string we use JSON.parse(localStorage.getItem(localStorage.key(i)))
-                    html+=`
-                    <tr>
-                      <td>${localStorage.key(i)} </td>
-                      <td>${ JSON.parse(localStorage.getItem(localStorage.key(i)))}</td>
-                    </tr>`
-                }
-                document.querySelector("#table").innerHTML=html;
+                showCart(localStorage)
             }
             // iske value ko blank ke denge
             e.currentTarget.nextElementSibling.value='';
             // now we make display flex of yourCart div when we click on cart Icon
-            cartIcon.addEventListener("click",()=>{
-                document.querySelector(".yourCart").style.display = "flex"
-            })
+           
         });
     });
 }
@@ -239,3 +226,19 @@ function scroll() {
 }
 filterbtn.addEventListener("click", scroll);
 
+// show item
+
+function showCart(obj){
+    let html = ''
+    for(let i=0; i<obj.length; i++){
+    // to get the local storage key index
+    // console.log(localStorage.key(i));
+    // to get the key value in without string we use JSON.parse(localStorage.getItem(localStorage.key(i)))
+        html+=`
+        <tr>
+          <td>${obj.key(i)} </td>
+          <td>${ JSON.parse(obj.getItem(obj.key(i)))}</td>
+        </tr>`
+    }
+    document.querySelector("#table").innerHTML=html;
+}
