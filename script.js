@@ -151,7 +151,7 @@ function displayItemMenu(menuItem) {
         ${menu.title}
     </div>
     <button class="cart" id="${menu.title}" data-rs = "${menu.price}">${menu.cart}</button>
-    <input type="number" class="quantity" min="1" max="20">
+    <input type="number" class="quantity" style="display:none" min="1" max="20">
     <div class="price">
         ${menu.price}
     </div>
@@ -191,6 +191,9 @@ function getData(e) {
     let itemName = e.currentTarget.id;
     // here i didn't get inputvalue directly so i go to console and i found nextElement sibbling
     // is input so i get the value by this way
+    let inputdiv = e.currentTarget.nextElementSibling;
+    inputdiv.style.display="inline"
+ 
     let inputValue = e.currentTarget.nextElementSibling.value;
     // i set the key as the name of id
     if (inputValue != '') {
