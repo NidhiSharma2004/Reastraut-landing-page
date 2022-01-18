@@ -179,9 +179,11 @@ function cartSection() {
     // we can use for each method on all class and target each cart btn
     carts.forEach((cart) => {
         // w'll make fun that take e as a current argument;
-        cart.addEventListener("click", (e) => {
-            getData(e)
+        cart.addEventListener("click", (e) =>{
+            getData(e);
+            
         });
+        
     });
 }
 
@@ -192,8 +194,13 @@ function getData(e) {
     // here i didn't get inputvalue directly so i go to console and i found nextElement sibbling
     // is input so i get the value by this way
     let inputdiv = e.currentTarget.nextElementSibling;
-    inputdiv.style.display="inline"
- 
+// to add the feature of when we click on add to cart to make input div display inline and when we click
+// second time we want to make input div display none
+    if(inputdiv.style.display=="none"){
+        inputdiv.style.display="inline"
+    }else{
+        inputdiv.style.display="none"
+    }
     let inputValue = e.currentTarget.nextElementSibling.value;
     // i set the key as the name of id
     if (inputValue != '') {
@@ -231,6 +238,8 @@ function getData(e) {
             document.querySelector(".cartShowCase").style.display = "none"
         })
     }
+    // inputdiv = e.currentTarget.nextElementSibling;
+    // inputdiv.style.display="none"
 
 }
   // show the cart div
@@ -241,13 +250,23 @@ cartIcon.addEventListener("click",()=>{
     showCart(localStorage)
     // console.log(localStorage.length)
     if(localStorage.length>0){
-    document.querySelector(".cartShowCase").style.display = "flex";
+    document.querySelector(".cartShowCase").style.display = "flex"
+    }else{
+        let h5= document.createElement("h5");
+        h5.className = "cartEmpty"
+        h5.innerText = "your cart is empty!";
+        document.querySelector(".cartShowCase").after(h5);
+        console.log(document.querySelector(".cartEmpty"))
     }
+        
     cutIcon.addEventListener("click",()=>{
         document.querySelector(".cartShowCase").style.display = "none"
-    })
     });
-
+    document.querySelector(".clearAll").addEventListener("click",()=>{
+        localStorage.clear();
+        showCart(localStorage)
+    })
+});
 // show item
 
 function showCart(obj) {
