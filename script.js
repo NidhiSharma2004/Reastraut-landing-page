@@ -168,6 +168,7 @@ function displayItemMenu(menuItem) {
     sectionCentre.innerHTML = displayMenu;
 }
 
+
 // CART SECTION TREATMENT
 
 function cartSection() {
@@ -197,15 +198,29 @@ function cartSection() {
                 }else{
                 // or ek baar koi value usme chli gyi to usse mein se vo parse hokr data mein aa jaye
                     data = JSON.parse(itemTitleKey);
-                    console.log(`parse ki gyi value`,data);
+                // console.log(`parse ki gyi value`,data);
                 // jo new value dubra input value m dali h use push krneg
                   data.push(inputValue);
-                    console.log(`push ki gyi value`,data);
+                    // console.log(`push ki gyi value`,data);
                 // new value puch hone ke baad phele value ko cut kr denge or uske baad set kr denge
                     data.splice(0,1);
-                    console.log(`splice hone ka bad`,data);
+                // console.log(`splice hone ka bad`,data);
                 }
+                
                 localStorage.setItem(`${itemName}`, JSON.stringify(data));
+                // kyuki locastorage ek object hai isliye we use for loop 
+                let html = ''
+                for(let i=0; i<localStorage.length; i++){
+                // to get the local storage key index
+                // console.log(localStorage.key(i));
+                // to get the key value in without string we use JSON.parse(localStorage.getItem(localStorage.key(i)))
+                    html+=`
+                    <tr>
+                      <td>${localStorage.key(i)} </td>
+                      <td>${ JSON.parse(localStorage.getItem(localStorage.key(i)))}</td>
+                    </tr>`
+                }
+                document.querySelector("#table").innerHTML=html
             }
             // iske value ko blank ke denge
             e.currentTarget.nextElementSibling.value=''
@@ -221,3 +236,4 @@ function scroll() {
     });
 }
 filterbtn.addEventListener("click", scroll);
+
