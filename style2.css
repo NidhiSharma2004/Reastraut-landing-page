@@ -170,7 +170,30 @@ h1{
         transform: rotate(360deg);
     }
   }
+.cartIcon{
+    position: relative;
+    left: 86%;
+    text-align: center;
+    font-size: 3rem;
+    top: -11%;
+    color: white;
+}
 .yourCart{
-    border: 2px solid;
-    width: 400px;
+    padding: .4rem;
+    width: 237px;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 700;
+    position: relative;
+    left: 44%;
+    border-radius: 16px;
+    margin-top: -231px;
+    color: white;
+    z-index: 1;
+    box-shadow: 2px 2px 5px 2px rgb(255, 253, 253);
+    background: rgba(4, 68, 63, 0.869);
+    display: none
+}
+#table{
+    width: 100%;
 }

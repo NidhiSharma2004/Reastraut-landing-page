@@ -1,123 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style2.css" />
-    <title>Reastraunt</title>
-  </head>
-  <body>
-    <section class="whole-container">
-      <!-- hero section -->
-      <section class="hero-container">
-        <div class="pink"></div>
-        <div class="nav-container">
-          <div class="nav">
-            <div class="logo" data-aos="fade-right" data-aos-duration="1000">
-              eatiz
-            </div>
 
-            <!-- filterbtn is btn container -->
-            <div
-              class="filterbtn"
-              data-aos="fade-down"
-              data-aos-duration="1500"
-            >
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style2.css" />
+  <title>Reastraunt</title>
+</head>
+
+<body>
+  <section class="whole-container">
+    <!-- hero section -->
+    <section class="hero-container">
+      <div class="pink"></div>
+      <div class="nav-container">
+        <div class="nav">
+          <div class="logo" data-aos="fade-right" data-aos-duration="1000">
+            eatiz
+          </div>
+
+          <!-- filterbtn is btn container -->
+          <div class="filterbtn" data-aos="fade-down" data-aos-duration="1500">
             <!-- button will be show -->
-            </div>
-          </div>
-          <div class="contact">Contact us</div>
-        </div>
-        
-        <div class="infsec">
-          <div class="text" data-aos="fade-in" data-aos-duration="1000">
-            <h1 class="logo" data-aos="fade-right" data-aos-duration="1000">
-              Wlecome to our reastraunt
-            </h1>
-            <h3 class="enjoy">enjoy your day with your family and friends</h3>
-            <div class="location">
-              <h3>Abuppur</h3>
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-          </div>
-          <div class="images" >
-            <img src="images/p.png" alt="" data-aos="fade-left" data-aos-duration="1000"/>
           </div>
         </div>
-        <div class="dot">
-          <img src="images/dot.png" alt="">
-        </div>
-      </section>
-      <!-- hero section end -->
-      <!-- menu section -->
-      <!-- your cart div section start -->
-
-      <div class="youhCart">
-        <table id="table">
-        <tr>
-          <th>your Item</th>
-          <th>Quantity</th>
-        </tr>
-      </table>
+        <div class="contact">Contact us</div>
       </div>
-      <!-- your cart div section end -->
-      <!-- tittle -->
-      <section class="item-cntainer">
-        <div class="title"  data-aos="fade-out" data-aos-duration="1000">
-          <h1>Our items</h1>
-          <div class="underline"></div>
-        </div>
 
-        <!-- title end -->
-
-        <div class="section-centre" data-aos="fade-left" data-aos-duration="3500">
-          <div class="items">
-            <div class="image"><img src= ></div>
-            <div class="cartContainer">
-              <button class="cart" id=""></button>
-            </div>
-            
-            <div class="info">
-              <div class="title"></div>
-              <div class="price"></div>
-            </div>
-            <div class="desc">
-              <p></p>
-            </div>
+      <div class="infsec">
+        <div class="text" data-aos="fade-in" data-aos-duration="1000">
+          <h1 class="logo" data-aos="fade-right" data-aos-duration="1000">
+            Wlecome to our reastraunt
+          </h1>
+          <h3 class="enjoy">enjoy your day with your family and friends</h3>
+          <div class="location">
+            <h3>Abuppur</h3>
+            <i class="fas fa-map-marker-alt"></i>
           </div>
         </div>
-
-        <!-- cart -->
-        <!-- <div class="cartInput">
-          <button id="done">done</button>
-          <div class="inputheading">
-            <h1></h1>
-          </div>
-          <div class="inputprice">
-            <h2></h2>
-          </div>
-          <div class="quantityContainer">
-            <input type="number" id="quantity" min="1" max="20">
-          </div>
-          <button type="button" id="exit">Delete</button>
-        </div> -->
-        
-      </section>
+        <div class="images">
+          <img src="images/p.png" alt="" data-aos="fade-left" data-aos-duration="1000" />
+        </div>
+      </div>
+      <div class="dot">
+        <img src="images/dot.png" alt="">
+      </div>
+      <!-- cart icon -->
+      <i class="fas fa-shopping-cart cartIcon"></i>
+      <!-- cart icon end -->
     </section>
-    <!-- menu section end -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script src="script.js"></script>
-  </body>
+    <!-- hero section end -->
+    <!-- menu section -->
+    <!-- your cart div section start -->
+    <section class="cartShowCase">
+      <div class="yourCart">
+        <table id="table">
+        </table>
+      </div>
+    </section>
+    <!-- your cart div section end -->
+    <!-- tittle -->
+    <section class="item-cntainer">
+      <div class="title" data-aos="fade-out" data-aos-duration="1000">
+        <h1>Our items</h1>
+        <div class="underline"></div>
+      </div>
+
+      <!-- title end -->
+
+      <div class="section-centre" data-aos="fade-left" data-aos-duration="3500">
+        <div class="items">
+          <div class="image"><img src=></div>
+          <div class="cartContainer">
+            <button class="cart" id=""></button>
+          </div>
+
+          <div class="info">
+            <div class="title"></div>
+            <div class="price"></div>
+          </div>
+          <div class="desc">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <!-- menu section end -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="script.js"></script>
+</body>
+
 </html>

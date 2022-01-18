@@ -82,9 +82,7 @@ let cartContainer = document.querySelector(".cartContainer");
 let cartInput = document.querySelector(".cartInput");
 let done = document.getElementById("done");
 let yourCart = document.getElementById("yourCart");
-// let yourCartItem = document.getElementById("yourCartItem");
-// let yourCartItemValue = document.getElementById("yourCartItemValue")
-
+let cartIcon = document.querySelector(".cartIcon")
 // load the item
 window.addEventListener("DOMContentLoaded", function () {
     displayItemMenu(menu);
@@ -220,10 +218,14 @@ function cartSection() {
                       <td>${ JSON.parse(localStorage.getItem(localStorage.key(i)))}</td>
                     </tr>`
                 }
-                document.querySelector("#table").innerHTML=html
+                document.querySelector("#table").innerHTML=html;
             }
             // iske value ko blank ke denge
-            e.currentTarget.nextElementSibling.value=''
+            e.currentTarget.nextElementSibling.value='';
+            // now we make display flex of yourCart div when we click on cart Icon
+            cartIcon.addEventListener("click",()=>{
+                document.querySelector(".yourCart").style.display = "flex"
+            })
         });
     });
 }
