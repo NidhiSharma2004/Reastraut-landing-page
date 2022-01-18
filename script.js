@@ -178,7 +178,7 @@ function cartSection() {
     let carts = document.querySelectorAll(".cart");
     // we can use for each method on all class and target each cart btn
     carts.forEach((cart) => {
-        // for each cart btn we add event listener to get id(which includes name of item) and
+        // w'll make fun that take e as a current argument;
         cart.addEventListener("click", (e) => {
             getData(e)
         });
@@ -186,7 +186,6 @@ function cartSection() {
 }
 
 // function for local storage
-
 function getData(e) {
     // get the idname of current target
     let itemName = e.currentTarget.id;
@@ -224,6 +223,7 @@ function getData(e) {
             localStorage.clear();
             showCart(localStorage)
         })
+        // on click on cutIcon we make display none
         cutIcon.addEventListener("click",()=>{
             document.querySelector(".cartShowCase").style.display = "none"
         })
@@ -232,9 +232,14 @@ function getData(e) {
 }
   // show the cart div
 cartIcon.addEventListener("click",()=>{
+    // we have to call cartsection fun to get localStorage
     cartSection();
+    // we have to call show cart fun to show information
     showCart(localStorage)
+    // console.log(localStorage.length)
+    if(localStorage.length>0){
     document.querySelector(".cartShowCase").style.display = "flex";
+    }
     cutIcon.addEventListener("click",()=>{
         document.querySelector(".cartShowCase").style.display = "none"
     })
@@ -269,3 +274,6 @@ function scroll() {
 }
 filterbtn.addEventListener("click", scroll);
 
+// first i make all the function in cartsection then i divided it into 
+// 3 functions 1.getdata() 2. show cart  3.cartIcn;
+// i didn't make all the 3 fun at one time  
