@@ -177,30 +177,37 @@ h1{
     font-size: 3rem;
     cursor: pointer;
     top: -11%;
+    width: 55px;
+    height: 47px;
     color: white;
-}
-.yourCart{
-  
-    justify-content: space-between;
-    display: flex;
 }
 #table{
     width: 100%;
 }
 .cartShowCase{
     padding: .4rem;
-    width: 237px;
+    width: 280px;
     font-size: 1.3rem;
     font-weight: 700;
     position: relative;
     display: none;
     left: 44%;
     border-radius: 16px;
-    margin-top: -231px;
     color: white;
     z-index: 1;
     box-shadow: 2px 2px 5px 2px rgb(255, 253, 253);
     background: rgba(4, 68, 63, 0.869);
+}
+.show .cartShowCase{
+    display: flex;
+}
+.cut{
+    padding: .5rem;
+}
+.yourCart{
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
 }
 .clearAll{
     cursor: pointer;

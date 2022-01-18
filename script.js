@@ -83,6 +83,7 @@ let cartInput = document.querySelector(".cartInput");
 let done = document.getElementById("done");
 let yourCart = document.getElementById("yourCart");
 let cartIcon = document.querySelector(".cartIcon")
+let cutIcon = document.querySelector(".cut")
 // load the item
 window.addEventListener("DOMContentLoaded", function () {
     displayItemMenu(menu);
@@ -218,9 +219,17 @@ function getData(e) {
         // iske value ko blank ke denge
         e.currentTarget.nextElementSibling.value = '';
         showCart(localStorage);
+        // on click on clearAll btn we clear the whole local storage
         document.querySelector(".clearAll").addEventListener("click",()=>{
             localStorage.clear();
             showCart(localStorage)
+        })
+        // show the cart div
+        cartIcon.addEventListener("click",()=>{
+            document.querySelector(".cartShowCase").style.display = "flex"
+        });
+        cutIcon.addEventListener("click",()=>{
+            document.querySelector(".cartShowCase").style.display = "none"
         })
     }
 
