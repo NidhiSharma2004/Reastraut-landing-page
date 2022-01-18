@@ -1,4 +1,6 @@
 "use strict";
+// get the next sibbling of current target and display inline
+// let input = e.target.nextElementSibling.style.display="inline"
 const menu = [
     {
         image: "images/burger.jpg",
@@ -150,6 +152,7 @@ function displayItemMenu(menuItem) {
         ${menu.title}
     </div>
     <button class="cart" id="${menu.title}" data-rs = "${menu.price}">${menu.cart}</button>
+    <input type="number" class="quantity" min="1" max="20">
     <div class="price">
         ${menu.price}
     </div>
@@ -175,45 +178,40 @@ function cartSection() {
     // we can use for each method on all class and target each cart btn
     carts.forEach((cart) => {
         // for each cart btn we add event listener to get id(which includes name of item) and
-        // and dataset which includes rupees
         cart.addEventListener("click", function (e) {
-            cartInput.style.display = "flex";
-            let itemTitle = e.currentTarget.id;
-            let itemPrice = e.currentTarget.dataset.rs;
-            // put itemPrice from cart in cartContainer;
-            let inputprice = document.querySelector(".inputprice");
-            inputprice.innerHTML = `<h2>${itemPrice}</h2>`;
-            // put itemPrice from cart in cartContainer;
-            let inputheading = document.querySelector(".inputheading");
-            inputheading.innerHTML = `<h1>${itemTitle}</h1>`;
-            // on done we set the item in local storage
-      
-            function cartStorage(){
-            // get tha value of quantityinput
-            let quantityOfItem = document.getElementById("quantity").value;
-            let key = localStorage.getItem("key");
-            let itemsquantityObj = [];
-            console.log(key)
-            if (key == null) {
-                // if key is null, create a new key with value of title and price 
+            // get the idname of current target
+            let itemName = e.currentTarget.id;
+            // here i didn't get inputvalue directly so i go to console and i found nextElement sibbling
+            // is input so i get the value by this way
+            let inputValue = e.currentTarget.nextElementSibling.value;
+            // i set the key as the name of id
+            if (inputValue != '') {
+            // if input value is not blank then run the fun
+            // yha pr hm itemName ko hi key ki thrah se krenge
+                let itemTitleKey = localStorage.getItem(`${itemName}`);
+                // make a empty object
+                let data = [];
+                if (itemTitleKey == null) {
+                    data.push(inputValue);
+                // hr baar new item k liye itemTitleKey jo h vo null hogi
+                }else{
+                // or ek baar koi value usme chli gyi to usse mein se vo parse hokr data mein aa jaye
+                    data = JSON.parse(itemTitleKey);
+                    console.log(`parse ki gyi value`,data);
+                // jo new value dubra input value m dali h use push krneg
+                  data.push(inputValue);
+                    console.log(`push ki gyi value`,data);
+                // new value puch hone ke baad phele value ko cut kr denge or uske baad set kr denge
+                    data.splice(0,1);
+                    console.log(`splice hone ka bad`,data);
+                }
+                localStorage.setItem(`${itemName}`, JSON.stringify(data));
             }
-            else {
-            itemsquantityObj = JSON.parse(key);
-            console.log(key);
-               
-            }
-            itemsquantityObj.push(quantityOfItem);
-            localStorage.setItem("key", JSON.stringify(itemsquantityObj));
-        }
-        done.addEventListener("click",cartStorage)
+            // iske value ko blank ke denge
+            e.currentTarget.nextElementSibling.value=''
         });
     });
 }
-
-// make display none of cart div on click on exit;
-document.getElementById("exit").addEventListener("click", () => {
-    cartInput.style.display = "none";
-});
 
 // scrol window on click
 function scroll() {
