@@ -224,18 +224,21 @@ function getData(e) {
             localStorage.clear();
             showCart(localStorage)
         })
-        // show the cart div
-        cartIcon.addEventListener("click",()=>{
-            document.querySelector(".cartShowCase").style.display = "flex"
-        });
         cutIcon.addEventListener("click",()=>{
             document.querySelector(".cartShowCase").style.display = "none"
         })
     }
 
 }
-
-
+  // show the cart div
+cartIcon.addEventListener("click",()=>{
+    cartSection();
+    showCart(localStorage)
+    document.querySelector(".cartShowCase").style.display = "flex";
+    cutIcon.addEventListener("click",()=>{
+        document.querySelector(".cartShowCase").style.display = "none"
+    })
+    });
 
 // show item
 
