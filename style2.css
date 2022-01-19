@@ -79,9 +79,12 @@
 }
 .contact{
     font-size: 1.3rem;
-    color: white;
     z-index: 1;
     cursor: pointer;
+}
+.contact a{
+    text-decoration: none;
+    color: white;
 }
 .infsec{
     display: flex;
@@ -103,9 +106,13 @@
 h1{
     font-size: 3rem;
     font-weight: 900;
-    color: rgb(9, 58, 219);
+    background: -webkit-linear-gradient(rgb(14, 91, 98), rgb(200, 5, 47));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     border-radius: 6px;
     margin-bottom: -2rem;
+    margin-left: 10px;
+    margin-bottom: -2px;
 }
 .enjoy{
     color:rgb(224, 14, 60) ;
