@@ -128,9 +128,9 @@ h1{
 .section-centre{
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,20rem);
+    grid-template-columns: repeat(auto-fit,21.5rem);
     justify-content: center;
-    grid-gap: 1rem;
+    grid-gap: .5rem;
 }
 .items{
     overflow: hidden;
@@ -139,7 +139,7 @@ h1{
     color: white;
 }
 .items .image img{
-    width: 20rem;
+    width: 22rem;
     height: 18rem;
 }
 .info{
@@ -206,8 +206,12 @@ h1{
     box-shadow: 2px 2px 5px 2px rgb(255, 253, 253);
     background: rgba(4, 68, 63, 0.869);
 }
-.show .cartShowCase{
-    display: flex;
+.quantity{
+    display: inline;
+    width: 32px;
+    border-radius: 6px;
+    background: transparent;
+    border: 2px solid rosybrown;
 }
 .cut{
     padding: .5rem;
@@ -219,8 +223,8 @@ h1{
     width: 100%;
 }
 .cartEmpty{
-    left: 74%;
-    bottom: 89%;
+    left: 79%;
+    bottom: 87%;
     position: absolute;
     width: 179px;
     display: none;

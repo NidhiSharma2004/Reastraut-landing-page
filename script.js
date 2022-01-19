@@ -82,8 +82,10 @@ let cartContainer = document.querySelector(".cartContainer");
 let cartInput = document.querySelector(".cartInput");
 let done = document.getElementById("done");
 let yourCart = document.getElementById("yourCart");
-let cartIcon = document.querySelector(".cartIcon")
-let cutIcon = document.querySelector(".cut")
+let cartIcon = document.querySelector(".cartIcon");
+let cutIcon = document.querySelector(".cut");
+let cartEmpty = document.querySelector(".cartEmpty");
+
 // load the item
 window.addEventListener("DOMContentLoaded", function () {
     displayItemMenu(menu);
@@ -181,6 +183,8 @@ function cartSection() {
         // w'll make fun that take e as a current argument;
         cart.addEventListener("click", (e) =>{
             getData(e);
+            // jaise hi koi cart btn pr click kre cart empty msg ki display none ho jaye
+            cartEmpty.style.display="none"
             
         });
         
@@ -249,15 +253,13 @@ cartIcon.addEventListener("click",()=>{
     // we have to call show cart fun to show information
     showCart(localStorage)
     // console.log(localStorage.length)
-    let cartEmpty = document.querySelector(".cartEmpty");
     if(localStorage.length>0){
-    cartEmpty.style.display="none"
     document.querySelector(".cartShowCase").style.display = "flex";
-    }else{
-        cartEmpty.innerHTML=`cart is empty`;
+    }
+    else{
+        cartEmpty.innerHTML=`cart is empty!`;
         cartEmpty.style.display="inline"
     }
-        
     cutIcon.addEventListener("click",()=>{
         document.querySelector(".cartShowCase").style.display = "none"
     });
