@@ -152,11 +152,12 @@ function displayItemMenu(menuItem) {
     <div class="title">
         ${menu.title}
     </div>
+    <div class="price">
+    ${menu.price}
+</div>
     <button class="cart" id="${menu.title}" data-rs = "${menu.price}">${menu.cart}</button>
     <input type="number" class="quantity" style="display:none" min="1" max="20">
-    <div class="price">
-        ${menu.price}
-    </div>
+   
     </div>
     <div class="desc">
      <p>${menu.decs}</p>
