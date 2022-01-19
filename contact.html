@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="contact.css">
     <title>Contact us</title>
 </head>
+
 <body>
     <section class="mainContainer">
         <div class="heroContainer">
@@ -19,23 +21,37 @@
                 <img src="/images/ice3.jpg" alt="">
             </div>
             <h1 class="happyText">
-                
+                thanks for your suggestion!
             </h1>
         </div>
 
         <div class="formContainer">
-            <label for="name">enter your name</label>
-            <input type="text" name="" id="name" placeholder="enter your name">
-            <label for="email">enter your email</label>
-            <input type="email" name="" id="email" placeholder="enter your email">
-            <label for="email">enter your contact number</label>
-            <input type="email" name="" id="email" placeholder="enter your contact number">
-            <label for="text"></label>
-            <textarea id="text"></textarea>
-            <div id="submitbtn">Submit</div>
+            <form action="" method="post" id="contactForm" onsubmit = "event.preventDefault()">
+                <div class="name">
+                    <label for="name">enter your name</label>
+                    <input type="text" id="name" placeholder="enter your name"  autocomplete="off">
+                    <h2 class="alert1"></h2>
+                </div>
+                <div class="email">
+                    <label for="email">enter your email</label>
+                    <input type="email" id="email" name="email" placeholder="enter your email" autocomplete="off">
+                <h2 class="alert2"></h2>
+                </div>
+                <div class="number">
+                    <label for="contact">enter your contact number(optional)</label>
+                    <input id="contact" placeholder="enter your contact number" autocomplete="off">
+                  
+                </div>
+                <div class="text">
+                    <textarea id="text" placeholder="enter your suggestion"></textarea>
+                    <h2 class="alert3"></h2>
+                </div>
+                <button id="submitbtn" type="Submit" >Submit</button>
+            </form>
         </div>
     </section>
 
     <script src="contact.js"></script>
 </body>
+
 </html>
