@@ -184,8 +184,7 @@ function cartSection() {
         cart.addEventListener("click", (e) =>{
             getData(e);
             // jaise hi koi cart btn pr click kre cart empty msg ki display none ho jaye
-            cartEmpty.style.display="none"
-            
+            cartEmpty.style.display="none";
         });
         
     });
@@ -265,7 +264,9 @@ cartIcon.addEventListener("click",()=>{
     });
     document.querySelector(".clearAll").addEventListener("click",()=>{
         localStorage.clear();
-        showCart(localStorage)
+        showCart(localStorage);
+        document.querySelector(".cartShowCase").style.display = "none";
+
     })
 });
 // show item
