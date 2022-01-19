@@ -29,17 +29,14 @@
     background-image: linear-gradient(to bottom, rgb(254,4,60), rgba(233, 7, 75, 0.993))
 }
 .nav-container{
-    /* border: 1px solid; */
     display: flex;
     justify-content: space-between;
     height: 46px;
     padding: 0px 24px;
     align-items: center;
     letter-spacing: 2px;
-    /* z-index: 1; */
 }
 .nav{
-    /* border: 2px solid green;  */
     display: flex;
     width: 600px;
     justify-content: space-between;
@@ -51,7 +48,7 @@
     font-size: 3rem;
     color: rgb(233, 35, 68);
 }
-.btns, .cart, .savebtn{
+.btns{
     padding: .5rem;
     background: rgb(233, 35, 68);
     border: none;
@@ -61,9 +58,14 @@
     cursor: pointer;
     letter-spacing: 2px;
 }
-.savebtn{
-    background-color: rgb(4, 153, 41);
-    display: none;
+.cart{
+    background: transparent;
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    border: none;
 }
 .break{
     width: 100px;
@@ -79,7 +81,6 @@
     z-index: 1;
     width: 1074px;
     align-items: center;
-    
     height: 500px;
 }
 .text{
@@ -120,7 +121,6 @@ h1{
 .images img{
     margin-left: -71px;
     width: 100%;
-  
 } 
 .item-cntainer{
     text-align: center;

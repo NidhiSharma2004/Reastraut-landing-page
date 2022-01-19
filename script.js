@@ -8,7 +8,7 @@ const menu = [
         category: "fast food",
         title: "Burger",
         price: "$43",
-        cart: "add to cart",
+        cart: ` <span class="fas fa-shopping-cart"></span>`,
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
@@ -17,7 +17,7 @@ const menu = [
         category: "fast food",
         title: "chilli patato",
         price: "$34",
-        cart: "add to cart",
+        cart: ` <span class="fas fa-shopping-cart "></span>`,
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
@@ -26,7 +26,7 @@ const menu = [
         category: "fast food",
         title: "chowmin",
         price: "$40",
-        cart: "add to cart",
+        cart: ` <span class="fas fa-shopping-cart "></span>`,
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
@@ -35,7 +35,7 @@ const menu = [
         category: "breakfast",
         title: "pasta",
         price: "$50",
-        cart: "add to cart",
+        cart: ` <span class="fas fa-shopping-cart "></span>`,
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
@@ -44,7 +44,7 @@ const menu = [
         category: "breakfast",
         title: "paneer tika",
         price: "$60",
-        cart: "add to cart",
+        cart: ` <span class="fas fa-shopping-cart "></span>`,
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
@@ -53,7 +53,7 @@ const menu = [
         category: "breakfast",
         title: "mango shake",
         price: "$43",
-        cart: "add to cart",
+        cart: ` <span class="fas fa-shopping-cart "></span>`,
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
@@ -62,7 +62,7 @@ const menu = [
         category: "breakfast",
         title: "salad",
         price: "$43",
-        cart: "add to cart",
+        cart: ` <span class="fas fa-shopping-cart "></span>`,
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
@@ -71,7 +71,7 @@ const menu = [
         category: "breakfast",
         title: "momos",
         price: "$53",
-        cart: "add to cart",
+        cart: ` <span class="fas fa-shopping-cart "></span>`,
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
 ];
