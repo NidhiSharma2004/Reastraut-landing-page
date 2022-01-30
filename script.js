@@ -85,6 +85,7 @@ let yourCart = document.getElementById("yourCart");
 let cartIcon = document.querySelector(".cartIcon");
 let cutIcon = document.querySelector(".cut");
 let cartEmpty = document.querySelector(".cartEmpty");
+let navContainer = document.querySelector(".nav-container")
 
 // load the item
 window.addEventListener("DOMContentLoaded", function () {
@@ -288,9 +289,6 @@ function showCart(obj) {
     document.querySelector("#table").innerHTML = html;
 }
 
-
-
-
 // scrol window on click
 function scroll() {
     window.scrollBy({
@@ -300,8 +298,34 @@ function scroll() {
 }
 filterbtn.addEventListener("click", scroll);
 
+// show date dynamically
 function showDate() {
     let footer = document.getElementById("footer");
     let date = new Date()
     footer.innerText = `Copyright &copy; eatiz restaurants ${date.getFullYear()}. All Right Reserved`
 }
+// makining navbar fixed
+// kyuki page y-Axis m scroll hoga to pageYOffset se hme uski value milegai ki kitna scrol hua hai 
+// styling add ke dete hai
+// const styles = {
+//     position:"fixed",
+//     background:"rgba(224, 192, 192, 0.383)",
+//     margin:"0",
+//     color:"rgb(233, 35, 68)",
+// }
+// const styles2={
+//     position:"none",
+// }
+let navContainerH = navContainer.getBoundingClientRect().height
+console.log(navContainerH)
+window.addEventListener("scroll",()=>{
+    console.log(pageYOffset)
+    if(pageYOffset>navContainerH){
+        cartIcon.style.position = "fixed"
+        // Object.assign( navContainer.style,styles)
+        navContainer.classList.add("fixed")
+    }
+    else if(pageYOffset<navContainerH){
+        navContainer.classList.remove("fixed")
+    }
+})

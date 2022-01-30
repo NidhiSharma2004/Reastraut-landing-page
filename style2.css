@@ -32,6 +32,14 @@
     padding: 0px 24px;
     align-items: center;
     letter-spacing: 2px;
+    z-index: 2;
+}
+/* making stles for fixed navigation */
+.fixed{
+    position:fixed;
+    background:rgba(224, 192, 192, 0.383);
+    margin:0;
+    color:rgb(233, 35, 68);
 }
 .nav{
     display: flex;
@@ -199,6 +207,7 @@ h1{
     width: 65px;
     height: 47px;
     color: white;
+    z-index: 2;
 }
 #table{
     width: 100%;
