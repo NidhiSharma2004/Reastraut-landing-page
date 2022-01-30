@@ -40,7 +40,10 @@
     background:rgba(224, 192, 192, 0.383);
     margin:0;
     color:rgb(233, 35, 68);
+    width: 1092px;
+    height: 86px;
 }
+
 .nav{
     display: flex;
     width: 600px;
@@ -209,6 +212,13 @@ h1{
     color: white;
     z-index: 2;
 }
+/* and also set the position of .cartIcon */
+.IcnFixed{
+    left: 66%;
+    bottom: 88%;
+    position: fixed;
+}
+
 #table{
     width: 100%;
 }

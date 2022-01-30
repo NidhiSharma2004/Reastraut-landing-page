@@ -304,28 +304,20 @@ function showDate() {
     let date = new Date()
     footer.innerText = `Copyright &copy; eatiz restaurants ${date.getFullYear()}. All Right Reserved`
 }
-// makining navbar fixed
-// kyuki page y-Axis m scroll hoga to pageYOffset se hme uski value milegai ki kitna scrol hua hai 
-// styling add ke dete hai
-// const styles = {
-//     position:"fixed",
-//     background:"rgba(224, 192, 192, 0.383)",
-//     margin:"0",
-//     color:"rgb(233, 35, 68)",
-// }
-// const styles2={
-//     position:"none",
-// }
+// making sticky navbar
+// sbse phele navContainer ki height pta krenge or jaise ji scroll krne pr uski height cross ho vaise
+// hi ek class add hojaye jo styling me h and cart icn iske andr nhi aata isliye uski class alg se add 
+// kre h
 let navContainerH = navContainer.getBoundingClientRect().height
 console.log(navContainerH)
 window.addEventListener("scroll",()=>{
     console.log(pageYOffset)
     if(pageYOffset>navContainerH){
-        cartIcon.style.position = "fixed"
-        // Object.assign( navContainer.style,styles)
+        cartIcon.classList.add("IcnFixed")
         navContainer.classList.add("fixed")
     }
     else if(pageYOffset<navContainerH){
         navContainer.classList.remove("fixed")
+        cartIcon.classList.remove("IcnFixed")
     }
 })
