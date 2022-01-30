@@ -91,6 +91,7 @@ window.addEventListener("DOMContentLoaded", function () {
     displayItemMenu(menu);
     displayButton(menu);
     cartSection();
+    showDate();
 });
 
 // BUTTON AND FILTERING SECTION
@@ -182,12 +183,12 @@ function cartSection() {
     // we can use for each method on all class and target each cart btn
     carts.forEach((cart) => {
         // w'll make fun that take e as a current argument;
-        cart.addEventListener("click", (e) =>{
+        cart.addEventListener("click", (e) => {
             getData(e);
             // jaise hi koi cart btn pr click kre cart empty msg ki display none ho jaye
-            cartEmpty.style.display="none";
+            cartEmpty.style.display = "none";
         });
-        
+
     });
 }
 
@@ -198,12 +199,12 @@ function getData(e) {
     // here i didn't get inputvalue directly so i go to console and i found nextElement sibbling
     // is input so i get the value by this way
     let inputdiv = e.currentTarget.nextElementSibling;
-// to add the feature of when we click on add to cart to make input div display inline and when we click
-// second time we want to make input div display none
-    if(inputdiv.style.display=="none"){
-        inputdiv.style.display="inline"
-    }else{
-        inputdiv.style.display="none"
+    // to add the feature of when we click on add to cart to make input div display inline and when we click
+    // second time we want to make input div display none
+    if (inputdiv.style.display == "none") {
+        inputdiv.style.display = "inline"
+    } else {
+        inputdiv.style.display = "none"
     }
     let inputValue = e.currentTarget.nextElementSibling.value;
     // i set the key as the name of id
@@ -233,12 +234,12 @@ function getData(e) {
         e.currentTarget.nextElementSibling.value = '';
         showCart(localStorage);
         // on click on clearAll btn we clear the whole local storage
-        document.querySelector(".clearAll").addEventListener("click",()=>{
+        document.querySelector(".clearAll").addEventListener("click", () => {
             localStorage.clear();
             showCart(localStorage)
         })
         // on click on cutIcon we make display none
-        cutIcon.addEventListener("click",()=>{
+        cutIcon.addEventListener("click", () => {
             document.querySelector(".cartShowCase").style.display = "none"
         })
     }
@@ -246,24 +247,24 @@ function getData(e) {
     // inputdiv.style.display="none"
 
 }
-  // show the cart div
-cartIcon.addEventListener("click",()=>{
+// show the cart div
+cartIcon.addEventListener("click", () => {
     // we have to call cartsection fun to get localStorage
     cartSection();
     // we have to call show cart fun to show information
     showCart(localStorage)
     // console.log(localStorage.length)
-    if(localStorage.length>0){
-    document.querySelector(".cartShowCase").style.display = "flex";
+    if (localStorage.length > 0) {
+        document.querySelector(".cartShowCase").style.display = "flex";
     }
-    else{
-        cartEmpty.innerHTML=`cart is empty!`;
-        cartEmpty.style.display="inline"
+    else {
+        cartEmpty.innerHTML = `cart is empty!`;
+        cartEmpty.style.display = "inline"
     }
-    cutIcon.addEventListener("click",()=>{
+    cutIcon.addEventListener("click", () => {
         document.querySelector(".cartShowCase").style.display = "none"
     });
-    document.querySelector(".clearAll").addEventListener("click",()=>{
+    document.querySelector(".clearAll").addEventListener("click", () => {
         localStorage.clear();
         showCart(localStorage);
         document.querySelector(".cartShowCase").style.display = "none";
@@ -299,6 +300,8 @@ function scroll() {
 }
 filterbtn.addEventListener("click", scroll);
 
-// first i make all the function in cartsection then i divided it into 
-// 3 functions 1.getdata() 2. show cart  3.cartIcn;
-// i didn't make all the 3 fun at one time  
+function showDate() {
+    let footer = document.getElementById("footer");
+    let date = new Date()
+    footer.innerText = `Copyright &copy; eatiz restaurants ${date.getFullYear()}. All Right Reserved`
+}

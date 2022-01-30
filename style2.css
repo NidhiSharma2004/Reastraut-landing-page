@@ -148,6 +148,8 @@ h1{
     overflow: hidden;
     border-radius: 6px;
     background-color: rgba(0, 0, 0, 0.664);
+    
+    /* background-image: linear-gradient(to bottom, rgb(254,4,60), rgba(233, 7, 75, 0.993)); */
     color: white;
 }
 .items .image img{
@@ -193,7 +195,7 @@ h1{
     padding: .4rem;
     font-size: 3rem;
     cursor: pointer;
-    bottom: 96%;
+    bottom: 89%;
     width: 65px;
     height: 47px;
     color: white;
@@ -260,4 +262,18 @@ h1{
     to { 
         height: 50px ;
     }
+}
+#footer{
+    border: 2px solid;
+    text-align: center;
+    margin-top: 15px;
+    height: 40px;
+    display: flex;
+    background-image: linear-gradient(to bottom, rgb(254,4,60), rgba(233, 7, 75, 0.993));
+    font-family: 'Orelega One', cursive;
+    color: white;
+    letter-spacing: 1.5px;
+    font-size: 19px;    
+    justify-content: center;
+    align-items: center;
 }
