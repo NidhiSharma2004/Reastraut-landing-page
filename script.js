@@ -289,20 +289,11 @@ function showCart(obj) {
     document.querySelector("#table").innerHTML = html;
 }
 
-// scrol window on click
-function scroll() {
-    window.scrollBy({
-        top: 1000,
-        behavior: "smooth",
-    });
-}
-filterbtn.addEventListener("click", scroll);
-
 // show date dynamically
 function showDate() {
-    let footer = document.getElementById("footer");
+    let footer= document.getElementById("footer");
     let date = new Date()
-    footer.innerText = `Copyright &copy; eatiz restaurants ${date.getFullYear()}. All Right Reserved`
+    footer.innerHTML = ` Copyright &copy; eatiz restaurants${date.getFullYear()}. All Right Reserved`
 }
 // making sticky navbar
 // sbse phele navContainer ki height pta krenge or jaise ji scroll krne pr uski height cross ho vaise
@@ -311,13 +302,26 @@ function showDate() {
 let navContainerH = navContainer.getBoundingClientRect().height
 console.log(navContainerH)
 window.addEventListener("scroll",()=>{
-    console.log(pageYOffset)
+    // console.log(pageYOffset)
     if(pageYOffset>navContainerH){
-        cartIcon.classList.add("IcnFixed")
-        navContainer.classList.add("fixed")
+        cartIcon.classList.add("IcnFixed");
+        navContainer.classList.add("fixed");
     }
     else if(pageYOffset<navContainerH){
-        navContainer.classList.remove("fixed")
-        cartIcon.classList.remove("IcnFixed")
+        navContainer.classList.remove("fixed");
+        cartIcon.classList.remove("IcnFixed");
     }
+})
+
+// scroll functionality
+let Categorybtns = document.getElementById("#categoryBtn");
+// jb bhi koi #Categorybtns wali div p click kre to vo navigate ho jaye category items pr
+// uske liye category item ki top se position pta hone chaiye and then scroll p uski position fix kr denge
+Categorybtns.addEventListener("click",function(){
+    let categoryItems = document.getElementById("categoryBtn");
+    let position = categoryItems.offsetTop;
+    window.scrollTo({
+        left:0,
+        top:position
+    })
 })

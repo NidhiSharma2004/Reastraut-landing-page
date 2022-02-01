@@ -7,9 +7,11 @@
 .whole-container{
     width: 1140px;
     margin: 2px auto;
+    /* background-color: black ; */
     background-color: rgba(224, 192, 192, 0.383);
 }
 .hero-container{
+    /* background-color: black; */
     position: relative;
     width: 1140px;
     margin: 4px auto;
@@ -295,4 +297,28 @@ h1{
     font-size: 19px;    
     justify-content: center;
     align-items: center;
+}
+/* give away styling */
+ .giveaway{
+     width: 280px;
+     height: 80px;
+     position: relative;
+     left: 73%;
+     bottom: 15%;
+     text-align: center;
+    color: black;
+    transition: .5s ease-in;
+    cursor: pointer;
+}
+.giveaway a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    animation: giveawayAnim 2s infinite;
+}
+@keyframes giveawayAnim {
+    100%{
+        font-size: 2rem;
+        color: rgb(6, 126, 96);
+    }
 }
