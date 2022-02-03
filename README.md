@@ -12,8 +12,8 @@ This is a reastraunts website built with HTML CSS and vanilla js
 This Website is Hosted at https://nidhisharma2004.github.io/spotify-clone/
 
 ## Here is a ScreenShot of the Website
-<img src="./images/Screenshot 1.png"></img>
-<img src="./images/Screenshot 2.png"></img>
-<img src="./images/Screenshot 3.png"></img>
-<img src="./images/Screenshot 4.png"></img>
-<img src="./images/Screenshot 5.png"></img>
+<img src="..index/images/Screenshot 1.png"></img>
+<img src="..index/images/Screenshot 2.png"></img>
+<img src="..index/images/Screenshot 3.png"></img>
+<img src="..index/images/Screenshot 4.png"></img>
+<img src="..index/images/Screenshot 5.png"></img>

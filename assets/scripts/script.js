@@ -1,9 +1,9 @@
-"use strict";
+
 // get the next sibbling of current target and display inline
 // let input = e.target.nextElementSibling.style.display="inline"
 const menu = [
     {
-        image: "./images/burger.jpg",
+        image: "assets/images/burger.jpg",
         id: 1,
         category: "fast food",
         title: "Burger",
@@ -12,7 +12,7 @@ const menu = [
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
-        image: "images/chilli.jpg",
+        image: "assets/images/chilli.jpg",
         id: 2,
         category: "fast food",
         title: "chilli patato",
@@ -21,7 +21,7 @@ const menu = [
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
-        image: "images/chowmin.jpg",
+        image: "assets/images/chowmin.jpg",
         id: 3,
         category: "fast food",
         title: "chowmin",
@@ -30,7 +30,7 @@ const menu = [
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
-        image: "images/pasta2.jpg",
+        image: "assets/images/pasta2.jpg",
         id: 4,
         category: "breakfast",
         title: "pasta",
@@ -39,7 +39,7 @@ const menu = [
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
-        image: "images/paner.jpg",
+        image: "assets/images/paner.jpg",
         id: 5,
         category: "breakfast",
         title: "paneer tika",
@@ -48,7 +48,7 @@ const menu = [
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
-        image: "images/mango.jpg",
+        image: "assets/images/mango.jpg",
         id: 6,
         category: "breakfast",
         title: "mango shake",
@@ -57,7 +57,7 @@ const menu = [
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
-        image: "images/salad.jpg",
+        image: "assets/images/salad.jpg",
         id: 7,
         category: "breakfast",
         title: "salad",
@@ -66,7 +66,7 @@ const menu = [
         decs: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ipsum praesentium provident nisi odit distinctio ipsam delectus soluta cum possimus",
     },
     {
-        image: "images/momo.jpg",
+        image: "assets/images/momo.jpg",
         id: 8,
         category: "breakfast",
         title: "momos",
