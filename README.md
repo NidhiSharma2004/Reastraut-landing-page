@@ -15,3 +15,8 @@ _i also used aos library for animation._
 <img src="assets/images/Screenshot 5.png"></img>
 <img src="assets/images/Screenshot 3.png"></img>
 <img src="assets/images/Screenshot 4.png"></img>
+<br>
+## technologies used
+<img src="assets/images/html.png" width="150" height="80" />
+<img src="assets/images/css.png" width="80" height="70" />
+<img src="assets/images/js.png" width="70" height="70" />
