@@ -1,15 +1,14 @@
 # reastraunts-website
-This is a reastraunts website built with HTML CSS and vanilla js
 
-## features :
-* all content loaded using js
-* map method
-* filter method
-* local storage
-* give away
+## This is a reastraunts website built with HTML CSS and javascript
 
+_In this website i have loaded all the content dynamically and i added cart feature using local storage._
+<br>
+<img src="assets/images/emoji.png" width="15" height="15" />
+_i also used aos library for animation._
+<br>
 
-This Website is Hosted at https://nidhisharma2004.github.io/spotify-clone/
+* This Website is Hosted at https://nidhisharma2004.github.io/Reastraut-landing-page/
 
 ## Here is a ScreenShot of the Website
 <img src="assets/images/Screenshot 1.png"></img>
