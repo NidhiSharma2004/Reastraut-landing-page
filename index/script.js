@@ -3,7 +3,7 @@
 // let input = e.target.nextElementSibling.style.display="inline"
 const menu = [
     {
-        image: "images/burger.jpg",
+        image: "./images/burger.jpg",
         id: 1,
         category: "fast food",
         title: "Burger",
